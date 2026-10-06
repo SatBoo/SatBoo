@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>passo1_janela.py — Doom em Python | ENGCO231N01-SED</title>
+<style>
+  :root{
+    --azul:#0B3D91; --azul-2:#1259c3; --azul-claro:#e8f0fd; --azul-borda:#c3d7f7;
+    --vermelho:#C8102E; --vermelho-claro:#fdeaed;
+    --cinza:#5b6472; --cinza-claro:#f4f6fa; --texto:#16202e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:#eef2f8; color:var(--texto); padding:28px 20px 60px;
+  }
+  .folha{max-width:1080px;margin:0 auto;background:#fff;border-radius:14px;
+    box-shadow:0 14px 40px rgba(11,61,145,.13);overflow:hidden}
+
+  header{padding:30px 38px 26px;position:relative;
+    background:radial-gradient(900px 400px at 100% 0%, #eef4ff 0%, #fff 60%)}
+  header::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;
+    background:linear-gradient(90deg,var(--azul) 0%,var(--azul) 62%,
+      var(--vermelho) 62%,var(--vermelho) 100%)}
+  .tag{display:inline-block;background:var(--vermelho);color:#fff;font-size:12px;
+    font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    padding:5px 13px;border-radius:20px;margin-bottom:14px}
+  h1{font-size:34px;color:var(--azul);letter-spacing:-.5px;font-family:
+    ui-monospace,"Cascadia Code",Consolas,"Liberation Mono",monospace}
+  .sub{font-size:17px;color:var(--cinza);margin-top:8px;line-height:1.5}
+
+  .rodar{margin:22px 0 4px;background:var(--azul);color:#fff;border-radius:10px;
+    padding:16px 20px;font-size:15px;line-height:1.7}
+  .rodar b{color:#ffd9df}
+  .rodar code{font-family:ui-monospace,Consolas,"Liberation Mono",monospace;
+    background:rgba(255,255,255,.14);padding:2px 8px;border-radius:5px}
+
+  .indice{display:flex;flex-wrap:wrap;gap:9px;padding:0 38px 24px}
+  .indice a{flex:1 1 170px;background:var(--azul-claro);border:1px solid var(--azul-borda);
+    border-left:5px solid var(--vermelho);border-radius:8px;padding:9px 13px;
+    color:var(--azul);text-decoration:none;font-size:14px;font-weight:600}
+  .indice a b{display:block;font-size:19px;line-height:1.1}
+  .indice a:hover{background:var(--vermelho);color:#fff;border-color:var(--vermelho)}
+
+  table{width:100%;border-collapse:collapse;border-top:1px solid var(--azul-borda)}
+  td{vertical-align:top;padding:0}
+  .ln{width:62px;text-align:right;padding:1px 14px 1px 0;user-select:none;
+    background:var(--cinza-claro);border-right:1px solid var(--azul-borda)}
+  .ln a{color:#9aa7b8;text-decoration:none;font:12.5px/1.62 ui-monospace,Consolas,
+    "Liberation Mono",monospace}
+  .cd{padding-left:18px;white-space:pre;font:13.5px/1.62 ui-monospace,
+    "Cascadia Code",Consolas,"Liberation Mono",monospace}
+  tr:target .cd,tr:target .ln{background:#fff6cc}
+  tr:hover .cd{background:#f7faff}
+
+  .kw{color:#0b3d91;font-weight:700}
+  .def{color:#7b1fa2;font-weight:700}
+  .str{color:#C8102E}
+  .doc{color:#a03040;font-style:italic}
+  .cmt{color:#7c8794;font-style:italic}
+  .num{color:#0f7b6c}
+  .bi{color:#1259c3}
+  .const{color:#1259c3;font-weight:600}
+
+  footer{padding:20px 38px 26px;font-size:13px;color:var(--cinza);
+    border-top:1px solid var(--azul-borda);display:flex;justify-content:space-between;
+    flex-wrap:wrap;gap:10px}
+  footer a{color:var(--vermelho);font-weight:600;text-decoration:none}
+  footer a:hover{color:var(--azul)}
+  @media print{body{background:#fff;padding:0}
+    .folha{box-shadow:none;max-width:none} .indice{display:none}}
+</style>
+</head>
+<body>
+<div class="folha">
+  <header>
+    <span class="tag">Jogo 2D · Passo 1</span>
+    <h1>passo1_janela.py</h1>
+    <p class="sub">Computação Gráfica e Processamento de Imagens · ENGCO231N01-SED<br>
+      a janela e o ceu</p>
+    <div class="rodar">
+      <b>Como rodar:</b> abra o terminal na pasta <code>material/jogo/</code> e digite<br>
+      <code>python3 passo1_janela.py</code><br>
+      Aperte <code>ESC</code> para fechar a janela.
+    </div>
+  </header>
+  <div class="indice">
+
+  </div>
+  <table>
+<tr id="L1"><td class="ln"><a href="#L1">1</a></td><td class="cd"><span class="cmt"># JOGO DA RAPOSA - Passo 1: a janela e o ceu</span></td></tr>
+<tr id="L2"><td class="ln"><a href="#L2">2</a></td><td class="cd"><span class="cmt"># Computacao Grafica e PDI - ENGCO231N01-SED</span></td></tr>
+<tr id="L3"><td class="ln"><a href="#L3">3</a></td><td class="cd"><span class="cmt"># Rode com:  python3 passo1_janela.py</span></td></tr>
+<tr id="L4"><td class="ln"><a href="#L4">4</a></td><td class="cd"><span class="cmt"># Imagens: Sunny Land, de ansimuz (dominio publico). Fonte: Press Start 2P (licenca OFL).</span></td></tr>
+<tr id="L5"><td class="ln"><a href="#L5">5</a></td><td class="cd"><span class="kw">import</span> os</td></tr>
+<tr id="L6"><td class="ln"><a href="#L6">6</a></td><td class="cd"><span class="kw">import</span> tkinter <span class="kw">as</span> tk</td></tr>
+<tr id="L7"><td class="ln"><a href="#L7">7</a></td><td class="cd">&nbsp;</td></tr>
+<tr id="L8"><td class="ln"><a href="#L8">8</a></td><td class="cd"><span class="const">PASTA</span> = os.path.join(os.path.dirname(os.path.abspath(__file__)), <span class="str">&quot;assets&quot;</span>)</td></tr>
+<tr id="L9"><td class="ln"><a href="#L9">9</a></td><td class="cd">&nbsp;</td></tr>
+<tr id="L10"><td class="ln"><a href="#L10">10</a></td><td class="cd">janela = tk.Tk()</td></tr>
+<tr id="L11"><td class="ln"><a href="#L11">11</a></td><td class="cd">janela.title(<span class="str">&quot;Raposa e cerejas&quot;</span>)</td></tr>
+<tr id="L12"><td class="ln"><a href="#L12">12</a></td><td class="cd">tela = tk.Canvas(janela, width=<span class="num">768</span>, height=<span class="num">480</span>, highlightthickness=<span class="num">0</span>)</td></tr>
+<tr id="L13"><td class="ln"><a href="#L13">13</a></td><td class="cd">tela.pack()</td></tr>
+<tr id="L14"><td class="ln"><a href="#L14">14</a></td><td class="cd">&nbsp;</td></tr>
+<tr id="L15"><td class="ln"><a href="#L15">15</a></td><td class="cd"><span class="cmt"># O fundo tem 384 x 240 pixels; zoom(2) dobra para encher a janela</span></td></tr>
+<tr id="L16"><td class="ln"><a href="#L16">16</a></td><td class="cd">fundo = tk.PhotoImage(file=os.path.join(<span class="const">PASTA</span>, <span class="str">&quot;fundo.png&quot;</span>)).zoom(<span class="num">2</span>)</td></tr>
+<tr id="L17"><td class="ln"><a href="#L17">17</a></td><td class="cd">tela.create_image(<span class="num">0</span>, <span class="num">0</span>, image=fundo, anchor=<span class="str">&quot;nw&quot;</span>)</td></tr>
+<tr id="L18"><td class="ln"><a href="#L18">18</a></td><td class="cd">&nbsp;</td></tr>
+<tr id="L19"><td class="ln"><a href="#L19">19</a></td><td class="cd">janela.mainloop()</td></tr>
+<tr id="L20"><td class="ln"><a href="#L20">20</a></td><td class="cd">&nbsp;</td></tr>
+  </table>
+  <footer>
+    <span>20 linhas · biblioteca padrão do Python 3</span>
+    <span>Prof. Franklin R. X. Dantas · Centro Universitário FAMETRO</span>
+  </footer>
+</div>
+</body>
+</html>
